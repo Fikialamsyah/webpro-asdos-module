@@ -5,7 +5,6 @@ let email = document.getElementById("email");
 let jam = document.getElementById("jam");
 let tujuan = document.getElementById('tujuan');
 let tiket = document.getElementById("tiket");
-let maxChar = 30;
 let polaEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
 let polaJam = /^[0-9]+[0-9]+.+[0-9]$/
 let error = "";
@@ -15,59 +14,48 @@ btnSubmit.addEventListener('click', function(){
     if (name.value == ""){
         error = "Nama pelanggan harus di isi !";
         document.getElementById("error_name").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
-    } else if (name.value.length > maxChar){
+    } else if (name.value.length > 30){
         error = "Maksimum 30 karakter !";
         document.getElementById("error_name").innerHTML = error;
-        document.getElementById("tiket").reset();
-        return lse;
+        return false;
     // validasi email
     } else if(email == ""){
         error = "Email harus di isi !";
         document.getElementById("error_email").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     } else if(!polaEmail.test(email.value)){
         error = "Penulisan email tidak benar !";
         document.getElementById("error_email").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     // validasi jam    
     }else if(jam.value == ""){
         error = "Jam keberangkatan harus di isi !";
         document.getElementById("error_jam").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     }else if(!polaJam.test(jam.value)){
         error = "Format Jam tidak benar !";
         document.getElementById("error_jam").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     }else if(jam.value > 23.00){
         error = "Jam melebih batas normal !";
         document.getElementById("error_jam").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     // validasi tujuan    
     }else if(tujuan == ""){
         error = "Tujuan harus di isi !";
         document.getElementById("error_tujuan").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     // validasi ticket    
     }else if(tiket.value == ""){
         error = "Tiket harus di isi !";
         document.getElementById("error_tiket").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     }else if (tiket.value > 10){
         error = "Tiket melebihi batas normal !";
         document.getElementById("error_tiket").innerHTML = error;
-        document.getElementById("tiket").reset();
         return false;
     } else {
-        document.getElementById("tiket").reset();
         document.getElementById("hasil").innerHTML = "Data";
         document.getElementById("hasil_nama").innerHTML = "Nama : " + name.value;
         document.getElementById("hasil_email").innerHTML = "Email : " + email.value;
