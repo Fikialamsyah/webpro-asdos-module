@@ -1,13 +1,12 @@
 const result = document.querySelector("#result");
 
 // menangkap semua elemen a
-document.querySelectorAll("#opts a").forEach((a) =>
+document.querySelectorAll("#option a").forEach((a) =>
     // jika di klick akan menjalankan fungsi computerChoice
     a.onclick = (e)=> {
         computerChoice(e);
     }
 );
-
 
 // fungsi untuk menghandle logic pada game 
 function computerChoice(e) {
@@ -26,7 +25,7 @@ function computerChoice(e) {
         (e.target.innerText.trim() == "Rock" && result.innerHTML == "Scissors") ||
         (e.target.innerText.trim() == "Paper" && result.innerHTML == "Rock") ||
         (e.target.innerText.trim() == "Scissors" && result.innerHTML == "Paper")) {
-        setTimeout(pesan('You Win'), 100);
+        setTimeout(alert('You Win'), 100);
     }
 
 
@@ -36,7 +35,7 @@ function computerChoice(e) {
         (e.target.innerText.trim() == "Paper" && result.innerHTML == "Scissors") ||
         (e.target.innerText.trim() == "Scissors" && result.innerHTML == "Rock")
     ) {
-        setTimeout(pesan('Computer Win'), 100);
+        setTimeout(alert('Computer Win'), 100);
     }
 
 }

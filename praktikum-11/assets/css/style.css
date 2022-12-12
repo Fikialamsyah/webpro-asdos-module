@@ -20,7 +20,7 @@ body {
     height: 100vh;
 }
 
-#opts {
+#option {
     display: grid;
     grid-template-columns: repeat(3, 200px);
 }
@@ -34,7 +34,7 @@ a {
 }
 
 a:hover {
-    color: #ccc;
+    color: rgb(181, 0, 0);
 }
 
 /* 
